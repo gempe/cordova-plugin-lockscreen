@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="cordova-plugin-adenda"
+    version="1.0.0">
+    <name>Cordova Plugin Adenda</name>
+    <description></description>
+    <license>MIT</license>
+    <keywords>adenda,plugin,lockscreen</keywords>
+
+    <!-- android -->
+    <platform name="android">
+      <js-module src="www/plugin.js" name="plugin">
+        <runs/>
+        <!-- This is the window variable name you want, like window.AdendaCordovaPlugin -->
+        <clobbers target="AdendaCordovaPlugin" />
+        <!-- <merges target="plugin" /> -->
+      </js-module>
+
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="AdendaCordovaPlugin">
+          <param name="android-package" value="com.gempe.AdendaCordovaPlugin" />
+          <param name="onload" value="true" />
+        </feature>
+      </config-file>
+
+      <config-file target="AndroidManifest.xml" parent="/manifest">
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+        
+        <meta-data android:name="adenda_app_id" android:value="4CIX4WE8M7LDJBNSKKDX"/>
+        <meta-data android:name="adenda_app_key" android:value="CPFA85YAVGTMEYRF1UCT0IFI0MQUNB3MKJ3YRXRX" />
+      </config-file>
+
+      <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+      <source-file src="src/android/com/gempe/AdendaCordovaPlugin.java" target-dir="src/android/com/gempe/" />
+      <source-file src="src/android/res/layout/custom_layout.xml" target-dir="src/android/res/layout" />
+    </platform>
+</plugin>

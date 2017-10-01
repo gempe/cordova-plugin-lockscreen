@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <sdk.adenda.widget.AdendaButton
+        xmlns:adenda="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/lock_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        adenda:confirm_opt_in="false"
+        adenda:confirm_opt_out="false"
+        adenda:opt_in_text="Lockscreen rewards"
+        adenda:opt_out_text="Restore lockscreen" />
+
+</RelativeLayout>
